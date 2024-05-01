@@ -1,0 +1,86 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  border:1px solid red;
+}
+
+.headerNavBar {
+  background-color: #0092ca;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+.headerNavBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.headerNavBar li {
+  float: none;
+}
+
+
+.headerNavBar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.2s
+}
+
+.headerNavBar li a:hover{
+  background-color: #393e46;
+}
+
+
+/* General Footer Styling */
+footer {
+  background-color: #222831; /* First color: Dark charcoal */
+  color: #eeeeee; /* Fourth color: Light grey for text */
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footerNavBar {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.footerNavBar li {
+  display: inline; /* Display links in a line */
+  margin-right: 20px;
+}
+
+.footerNavBar a {
+  color: #eeeeee; /* Text color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerNavBar a:hover {
+  color: #0092ca; /* Third color: Bright blue for hover effect */
+}
+
+div.footer-credits {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+div.footer-credits a {
+  color: #00adb5; /* Use a distinctive color for links */
+  text-decoration: none;
+}
+
+div.footer-credits a:hover {
+  text-decoration: underline;
+}
