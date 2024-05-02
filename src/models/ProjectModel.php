@@ -20,6 +20,7 @@ class ProjectModel {
   }
 
   public function addProject($data) {
+    var_dump($data);
       $this->db->query("INSERT INTO projects (title, description, github_link, weblink, detailed_desc, challenges, lessons_improvements) VALUES (:title, :description, :github_link, :weblink, :detailed_desc, :challenges, :lessons_improvements)");
       $this->db->bind(':title', $data['title']);
       $this->db->bind(':description', $data['description']);
@@ -32,7 +33,7 @@ class ProjectModel {
   }
 
   public function updateProject($data) {
-    $this->db->query("UPDATE projects SET title = :title, description = :description, github_link = :github_link, weblink = :weblink, detailed_desc = :detailed_desc, challenges = :challenges, lessons_improvements = :lessons_improvements, _last_modified = NOW() WHERE _id = :id");
+    $this->db->query("UPDATE projects SET title = :title, description = :description, github_link = :github_link, weblink = :weblink, detailed_desc = :detailed_desc, challenges = :challenges, lessons_improvements = :lessons_improvements, _date_modified = NOW() WHERE _id = :id");
     $this->db->bind(':title', $data['title']);
     $this->db->bind(':description', $data['description']);
     $this->db->bind(':github_link', $data['github_link']);

@@ -29,8 +29,6 @@ class Router {
     $url = $_GET['url'] ?? 'home';
     $url = filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL);
     $urlParts = explode('/', $url);
-
-    // Attempt to match the base part of the URL (e.g., 'projects/edit')
     $baseRoute = implode('/', array_slice($urlParts, 0, 2));
 
     if (array_key_exists($baseRoute, $this->routes)) {
@@ -41,13 +39,11 @@ class Router {
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
             $controller = new $controllerName();
-
-            // Check if the method needs parameters
-            $param = $urlParts[2] ?? null; // Assuming ID or other parameters are always the third part of the URL
+            $param = $urlParts[2] ?? null;
             if ($param && method_exists($controller, $methodName)) {
-                $controller->{$methodName}($param); // Pass parameter to the method
+                $controller->{$methodName}($param);
             } else if (method_exists($controller, $methodName)) {
-                $controller->{$methodName}(); // Call method without parameters
+                $controller->{$methodName}();
             } else {
                 echo "Method $methodName not found in $controllerName.";
             }

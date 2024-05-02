@@ -19,17 +19,17 @@
 
     <div class="form-group">
         <label>Detailed Description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea id="description" name="detailed_desc" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Challenges:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea id="description" name="challenges" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Lessons and improvements:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea id="description" name="lessons_improvement" required></textarea>
     </div>
 
     <div class="form-group">

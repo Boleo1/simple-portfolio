@@ -1,4 +1,5 @@
 <div class="project-details">
+  <?php var_dump($project); ?>
     <h2>Project Details: <?= htmlspecialchars($project['title']); ?></h2>
     <p><strong>Description:</strong> <?= nl2br(htmlspecialchars($project['detailed_desc'])); ?></p>
     <p><strong>Challenges I faced:</strong> <?= nl2br(htmlspecialchars($project['challenges'])); ?></p>

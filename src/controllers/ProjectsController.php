@@ -60,7 +60,8 @@ class ProjectsController {
               'weblink' => $_POST['weblink'],
               'detailed_desc' => $_POST['detailed_desc'],
               'challenges' => $_POST['challenges'],
-              'lessons_improvements' => $_POST['lessons_improvements']
+              'lessons_improvements' => $_POST['lessons_improvements'],
+              '_date_modified' =>$_POST['_date_modified'],
           ];
           if ($this->projectModel->updateProject($updatedProject)) {
             header('Location: ' . BASE_URL .'admin'); // Redirect to the admin page
