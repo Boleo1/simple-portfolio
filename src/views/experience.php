@@ -22,7 +22,8 @@ include_once 'templates/head-template.php'
       </p>
       <h3>PC Technician (2023- Current)</h3>
       <p>
-        General duties range from servicing phones, tablets, and desktops to troubleshooting networking equipment. 
+        General duties range from servicing phones, tablets, and desktops to troubleshooting networking equipment. I currently am working on taking on other projects
+        to improve our department and also improve the resources on hand for users.
       </p>
     </div>
     <div class="workSection">

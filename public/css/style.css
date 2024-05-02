@@ -469,7 +469,7 @@ div.footer-credits a:hover {
 }
 
 
-/* Styling for the Work Experience section */
+/* --------------------------------------------- Styling for the Work Experience section */
 .workExperience {
   background-color: #fff;
   padding: 20px;
@@ -508,7 +508,7 @@ div.footer-credits a:hover {
 }
 
 
-/* Styling for the project details container */
+/* ------------------------------ Styling for the project details container */
 .project-details {
   background-color: #f9f9f9;
   padding: 20px;
@@ -549,7 +549,7 @@ div.footer-credits a:hover {
 /* General styles for form headers */
 .addFormHead {
   text-align: center;
-  color: #1e66a1; /* Consistent theme color */
+  color: #1e66a1;
   margin-bottom: 20px;
 }
 
@@ -561,7 +561,7 @@ div.footer-credits a:hover {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 600px; /* Restrict maximum width for better layout */
+  max-width: 600px;
 }
 
 /* General form group styling */
@@ -589,13 +589,13 @@ div.footer-credits a:hover {
 }
 
 .add-edit-textarea {
-  height: 100px; /* Fixed height for textarea */
-  resize: vertical; /* Allows user to resize vertically */
+  height: 100px;
+  resize: vertical;
 }
 
 /* Styling for buttons */
 button[type="submit"] {
-  background-color: #007bff; /* Vibrant blue for visibility */
+  background-color: #007bff;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -606,17 +606,45 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #0056b3;
 }
 
-/* a {
-  display: block;
+.weather-container {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px auto;
+  width: auto;
+  max-width: 500px;
+}
+
+.weather-heading {
+  color: #1e66a1;
   text-align: center;
-  margin-top: 20px;
-  color: #007bff;
-  text-decoration: none;
+  margin-bottom: 20px;
 }
 
-a:hover {
-  text-decoration: underline;
-} */
+.weather-details {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.weather-details p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333; 
+}
+
+.weather-details span {
+  font-weight: bold;
+  color: #0092ca;
+}
+
+.weather-error {
+  color: #f44336;
+  text-align: center;
+  font-size: 16px;
+}

@@ -6,10 +6,8 @@
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/style.css">
   <title><?php echo $pageTitle?></title>
 </head>
-<div>
-  <h2 class="editFormh2>Edit post:</h2>
-</div>
-<form class ="editForm" action="<?= BASE_URL ?>projects/update/<?= $project['_id']; ?>" method="post">
+<form class ="addForm" action="<?= BASE_URL ?>projects/update/<?= $project['_id']; ?>" method="post">
+  <h2 class="addFormHead"h2>Edit post:</h2>
     <div class="form-group">
         <label>Title:</label>
         <input class="add-edit-shortdesc" type="text" id="title" name="title" value="<?= htmlspecialchars($project['title']); ?>" required>
