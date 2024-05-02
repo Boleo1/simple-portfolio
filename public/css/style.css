@@ -7,10 +7,12 @@
 }
 
 .wrapper {
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-  min-height: 500px;
+  padding: 20 20;
 }
 
 /* Navigation bar styling*/
@@ -97,21 +99,524 @@ div.footer-credits a:hover {
 }
 
 
-/* Home view CSS*/
-.bodyContainer{
-  justify-content: center;
-  padding: 15px 40px;
-}
-.homeBody p {
-  font-size: 1.2em;
+.bodyContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  align-items: flex-start; 
 }
 
+/* Card styling */
+.homeCard {
+  flex: 0 0 300px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.homeImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.homeCardBody {
+  padding: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+
+.homeIntro {
+  flex: 2 1 300px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+
 .aboutIntro {
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
+
+.aboutPicture img {
+  flex: 1 1 40%;
+  background-size: cover;
+  min-height: 300px;
+  border-radius: 8px;
+}
+
+.aboutMe {
+  flex: 1 1 58%;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+/* Skills section styling */
 .aboutSkills {
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
 }
+
+.sectionSkills, .sectionLanguages, .sectionSoftSkills {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sectionSkills h3, .sectionLanguages h3, .sectionSoftSkills h3 {
+  margin-top: 0;
+}
+
+/* Awards section styling */
 .aboutAwards {
+  background-color: #f4f4f4;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
 }
+
+.aboutAwards h3 {
+  margin-top: 0;
+}
+
+.aboutAwards ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.aboutAwards li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.aboutAwards li:last-child {
+  border-bottom: none;
+}
+
+
+
+.loginFormContainer {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.loginForm{
+  background-color: #1e66a1;
+  border: solid 2px black;
+  width: 300px;
+  padding: 2em;
+  border-radius: 5px;
+}
+.loginForm input{
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.loginHeader {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+}
+.loginFormFields{
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.loginFormFields label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+.loginFormFields .btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #222831;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contactTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+.contactTable th, .contactTable td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.contactHead {
+  background-color: #0092ca;
+  color: white;
+}
+
+.contactTableBody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.contactTableBody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styling within Table */
+.contactTableBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contactTableBtn:hover {
+  background-color: #d32f2f;
+}
+
+.projectsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.projectsHead {
+  background-color: #0092ca;
+  color: white;
+}
+
+.projectsHead th {
+  padding: 12px 15px;
+}
+
+.projectsTableBody tr {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.projectsTableBody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.projectsTableBody td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.projectsTableBody td a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #1e66a1;
+  font-weight: bold;
+}
+
+.projectsTableBody td a:hover {
+  text-decoration: underline;
+}
+
+.projectsTableButtons a, .projectsTableButtons form {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.projectsTableBtn {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.projectsTableBtn:hover {
+  background-color: #d32f2f;
+}
+
+.projectsTableBody .projectsAddBtn {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.projectsTableBody .projectsAddBtn a {
+  text-decoration: none;
+  color: #0092ca;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #1e66a1;
+  color: white;
+}
+
+.projectsTableBody .projectsAddBtn a:hover {
+  background-color: #007ea7;
+  text-decoration: underline;
+}
+
+.contactFormContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* General styling for the form */
+.contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for form fields and labels */
+.contactFormFields {
+  margin-bottom: 15px;
+}
+
+.contactForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333333;
+}
+
+.contactForm input[type="text"],
+.contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+.contactForm textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contactFormBtn {
+  padding: 10px 15px;
+  background-color: #1e66a1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s; 
+}
+
+.contactFormBtn:hover {
+  background-color: #0092ca;
+}
+
+/* Styling for project cards */
+.project-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-card-h2 {
+  color: #0092ca;
+  margin-bottom: 10px;
+}
+
+.project-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.readMoreBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1e66a1;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.readMoreBtn:hover {
+  background-color: #007ea7;
+}
+
+
+/* Styling for the Work Experience section */
+.workExperience {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+.workExperience h3:first-child {
+  color: #0092ca;
+  margin-bottom: 15px;
+}
+
+.workSection {
+  margin-bottom: 20px;
+  border-left: 3px solid #0092ca;
+  padding-left: 15px;
+  position: relative;
+}
+
+.workSection h3 {
+  font-size: 18px;
+  color: #1e66a1;
+  margin-top: 0;
+}
+
+.workSection p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.workSection:hover {
+  background-color: #f4f4f4;
+}
+
+
+/* Styling for the project details container */
+.project-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+.project-details h2 {
+  color: #1e66a1;
+  margin-bottom: 15px;
+}
+
+.project-details p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project-details p strong {
+  color: #0092ca;
+  font-weight: bold;
+}
+
+.project-details a {
+  color: #007ea7;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.project-details a:hover {
+  color: #005f86;
+  text-decoration: underline;
+}
+
+/* General styles for form headers */
+.addFormHead {
+  text-align: center;
+  color: #1e66a1; /* Consistent theme color */
+  margin-bottom: 20px;
+}
+
+/* Form container styling */
+.addForm {
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px; /* Restrict maximum width for better layout */
+}
+
+/* General form group styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Styles for input fields and textareas */
+.add-edit-title,
+.add-edit-link,
+.add-edit-shortdesc,
+.add-edit-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-edit-textarea {
+  height: 100px; /* Fixed height for textarea */
+  resize: vertical; /* Allows user to resize vertically */
+}
+
+/* Styling for buttons */
+button[type="submit"] {
+  background-color: #007bff; /* Vibrant blue for visibility */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+} */

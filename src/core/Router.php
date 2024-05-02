@@ -9,6 +9,7 @@ class Router {
           'about' => ['controller' => 'SiteController', 'method' => 'about'],
           'projects' => ['controller' => 'SiteController', 'method' => 'projects'],
           'experience' => ['controller' => 'SiteController', 'method' => 'experience'],
+          'resume' => ['controller' => 'SiteController', 'method' => 'resume'],
           'contact' => ['controller' => 'SiteController', 'method' => 'contact'],
           'admin' => ['controller' => 'SiteController', 'method' => 'admin'],
           'login' => ['controller' => 'SiteController', 'method' => 'login'],

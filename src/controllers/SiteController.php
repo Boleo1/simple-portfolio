@@ -27,12 +27,6 @@ class SiteController
     include __DIR__ . '/../views/experience.php';
   }
 
-  public function resume()
-  {
-
-    include __DIR__ . '/../views/resume.php';
-  }
-
   public function contact()
   {
 
@@ -57,5 +51,10 @@ class SiteController
   public function create()
   {
     include __DIR__ . '/../views/create.php';
+  }
+  
+  public function resume()
+  {
+    include __DIR__ .'/../../public/Resume.pdf';
   }
 }

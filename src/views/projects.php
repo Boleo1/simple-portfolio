@@ -13,8 +13,8 @@ $projects = $projectModel->getProjects();
   </div>
   <?php foreach ($projects as $project): ?>
             <div class="project-card">
-                <h2><?= htmlspecialchars($project['title']); ?></h2>
-                <p><?= substr(htmlspecialchars($project['description']), 0, 150); ?>...</p>
+                <h2 class="project-card-h2"><?= htmlspecialchars($project['title']); ?></h2>
+                <p class="project-card-desc"><?= substr(htmlspecialchars($project['description']), 0, 150); ?>...</p>
                 <a href="<?= BASE_URL ?>projects/view/<?= $project['_id'] ?>" class="readMoreBtn">Read more</a>
             </div>
         <?php endforeach; ?>

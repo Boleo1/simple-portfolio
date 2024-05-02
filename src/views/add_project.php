@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Add Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/style.css">
+  <title><?php echo $pageTitle?></title>
 </head>
-<body>
-    <h1>Add New Project</h1>
-    <form action="<?php echo BASE_URL. 'projects/store'?>"method="post">
+    <h2 class="addFormHead">Add New Project</h2>
+    <form class="addForm" action="<?php echo BASE_URL. 'projects/store'?>"method="post">
     <div class="form-group">
         <label>Title:</label>
-        <input type="text" id="title" name="title" required>
+        <input class ="add-edit-title" type="text" id="title" name="title" required>
     </div>
 
     <div class="form-group">
         <label>Short description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea class="add-edit-shortdesc" id="description" name="description" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Detailed Description:</label>
-        <textarea id="description" name="detailed_desc" required></textarea>
+        <textarea class="add-edit-textarea" id="description" name="detailed_desc" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Challenges:</label>
-        <textarea id="description" name="challenges" required></textarea>
+        <textarea class="add-edit-textarea" id="description" name="challenges" required></textarea>
     </div>
 
     <div class="form-group">
         <label>Lessons and improvements:</label>
-        <textarea id="description" name="lessons_improvement" required></textarea>
+        <textarea class="add-edit-textarea"id="description" name="lessons_improvements" required></textarea>
     </div>
 
     <div class="form-group">
         <label>GitHub Link:</label>
-        <input type="url" id="github_link" name="github_link">
+        <input class="add-edit-link" type="url" id="github_link" name="github_link">
     </div>
 
     <div class="form-group">
         <label>Live Project Link:</label>
-        <input type="url" id="weblink" name="weblink">
+        <input class="add-edit-link" type="url" id="weblink" name="weblink">
     </div>
 
         <button type="submit">Add Project</button>

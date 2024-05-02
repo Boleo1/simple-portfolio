@@ -7,22 +7,19 @@ class ProjectsController {
       $this->projectModel = new ProjectModel();
   }
 
-  // Display all projects on the admin dashboard
   public function index() {
-    $projects = $this->projectModel->getProjects(); // Fetch projects
+    $projects = $this->projectModel->getProjects();
     var_dump($projects);
     if (!is_array($projects)) {
-        $projects = []; // Ensure $projects is always an array
+        $projects = [];
     }
-    include 'src/views/admin.php'; // Include your view file
+    include 'src/views/admin.php';
 }
 
-  // Display a form to add a new project
   public function create() {
-      include 'src/views/add_project.php'; // Form for adding a new project
+      include 'src/views/add_project.php';
   }
 
-  // Save a new project from the form
   public function store() {
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $newProject = [
@@ -35,21 +32,19 @@ class ProjectsController {
               'lessons_improvements' => $_POST['lessons_improvements'] ?? ''
           ];
           if ($this->projectModel->addProject($newProject)) {
-              header('Location: ' . BASE_URL .'admin'); // Redirect to the admin page
+              header('Location: ' . BASE_URL .'admin');
           } else {
-              // Handle errors, possibly showing the form again with error messages
               include 'src/views/create.php';
           }
       }
   }
 
-  // Display a form to edit an existing project
+
   public function edit($id) {
       $project = $this->projectModel->getProjectById($id);
-      include 'src/views/edit_project.php'; // Form for editing the project
+      include 'src/views/edit_project.php';
   }
 
-  // Update an existing project from the form
   public function update($id) {
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $updatedProject = [
@@ -64,27 +59,24 @@ class ProjectsController {
               '_date_modified' =>$_POST['_date_modified'],
           ];
           if ($this->projectModel->updateProject($updatedProject)) {
-            header('Location: ' . BASE_URL .'admin'); // Redirect to the admin page
+            header('Location: ' . BASE_URL .'admin');
           } else {
-              // Handle errors, possibly re-showing the edit form with error messages
               include 'src/views/edit_project.php';
           }
       }
   }
 
-  // Delete an existing project
+
   public function destroy($id) {
       if ($this->projectModel->deleteProject($id)) {
-          header('Location: ' . BASE_URL .'admin'); // Redirect to the admin page
+          header('Location: ' . BASE_URL .'admin');
       } else {
-          // Handle failure, possibly returning an error message
           echo "Failed to delete the project.";
       }
   }
 
-  // View a single project detail
   public function show($id) {
       $project = $this->projectModel->getProjectById($id);
-      include 'src/views/view_project.php'; // Detailed view of a single project
+      include 'src/views/view_project.php';
   }
 }

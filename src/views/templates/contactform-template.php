@@ -6,12 +6,12 @@
     </div>
     <div class="contactFormFields">
       <label>Email</label>
-      <input type="text" name="contactEmail">
+      <input type="text" name="contactEmail" required>
     </div>
     <div class="contactFormFields">
       <label>Message:</label>
       <textarea name="contactMessage"></textarea>
     </div>
-    <button name="contactBtn" type="submit">Submit</button>
+    <button class="contactFormBtn" name="contactBtn" type="submit">Submit</button>
   </form>
 </div>

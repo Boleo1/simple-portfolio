@@ -10,7 +10,7 @@ include_once 'templates/head-template.php'
   </div>
   <div class="aboutIntro">
     <div class="aboutPicture">
-      
+      <img src="public/img/header.jpg">
     </div>
     <div class="aboutMe">
       <h3>About me</h3>
@@ -24,7 +24,6 @@ include_once 'templates/head-template.php'
     </div>
   </div>
   <div class="aboutSkills">
-    <h2>Skills</h2>
     <div class="sectionSkills">
       <ul>
         <h3>Skills</h3>
