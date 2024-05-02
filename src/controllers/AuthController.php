@@ -10,11 +10,10 @@ class AuthController {
   }
 
   // Handle Login
-  public function loginUser() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['loginUsername'];
-        $password = $_POST['loginPassword'];
-
+  public function submitLogin() {
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
         if ($this->authModel->verifyCredentials($username, $password)) {
             $_SESSION['logged_in'] = true;
             $_SESSION['user'] = $username;  // Store username in session for access control

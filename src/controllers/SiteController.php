@@ -41,7 +41,6 @@ class SiteController
 
   public function admin()
   {
-    session_start();
     if (!isset($_SESSION['logged_in'])) {
         header('Location: ' . BASE_URL .'login');
         exit;
@@ -52,7 +51,6 @@ class SiteController
 
   public function login()
   {
-
     include __DIR__ . '/../views/login.php';
   }
 }

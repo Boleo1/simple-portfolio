@@ -3,6 +3,7 @@ $pageTitle = "Contact";
 include_once 'templates/head-template.php';
 include_once 'src/controllers/ContactController.php';
 include_once 'src/models/ContactModel.php';
+var_dump($_POST);
 ?>
 <main class="container">
   <div class="banner">

@@ -1,7 +1,6 @@
 <?php
 $pageTitle = "Home";
-include_once 'templates/head-template.php'
-
+include_once 'templates/head-template.php';
 ?>
 
 

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$_SESSION['user'] = '';
+echo session_id();
 define('BASE_URL', '/simple-portfolio/');
 require_once 'src/core/Router.php';
 
@@ -15,5 +17,4 @@ define('DB_HOST', $config['database']['host']);
 define('DB_NAME', $config['database']['name']);
 
 $router = new Router();
-$router->route();
-
+$router->route(); 

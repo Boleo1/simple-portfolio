@@ -13,22 +13,21 @@ class AuthModel
 
   public function verifyCredentials($username, $password)
   {
-      $this->db->query("SELECT password FROM users WHERE username = :username");
+      // Using named parameters
+      $this->db->query("SELECT * FROM users WHERE username = :username AND password = :password");
       $this->db->bind(':username', $username);
+      $this->db->bind(':password', $password);
+  
       $result = $this->db->single();
   
       if (!$result) {
-          error_log("No user found with username: $username");
+          error_log("No user found with username: $username or password mismatch");
           return false;
       }
   
-      if ($result->password === $password) {
-          return true;
-      } else {
-          error_log("Password mismatch: DB Password '{$result->password}' vs. Provided Password '{$password}'");
-          return false;
-      }
+      return true; // If a result is found, credentials are correct
   }
+  
   
 
   public function userExists($username) 
