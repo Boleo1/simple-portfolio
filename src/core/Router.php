@@ -1,32 +1,40 @@
 <?php
 
 class Router {
-
   private $routes;
 
   public function __construct() {
       $this->routes = [
-          'home' => ['controller' => 'HomeController', 'method' => 'index'],
-          'about' => ['controller' => 'AboutController', 'method' => 'index'],
-          'projects' => ['controller' => 'ProjectsController', 'method' => 'index'],
-          'experience' => ['controller' => 'ExperienceController', 'method' => 'index'],
-          'contact' => ['controller' => 'ContactController', 'method' => 'index'],
-          'admin' => ['controller' => 'AdminController', 'method' => 'index'],
-          'login' => ['controller' => 'LoginController', 'method' => 'index'],
+          'home' => ['controller' => 'SiteController', 'method' => 'home'],
+          'about' => ['controller' => 'SiteController', 'method' => 'about'],
+          'projects' => ['controller' => 'SiteController', 'method' => 'projects'],
+          'experience' => ['controller' => 'SiteController', 'method' => 'experience'],
+          'contact' => ['controller' => 'SiteController', 'method' => 'contact'],
+          'admin' => ['controller' => 'SiteController', 'method' => 'admin'],
+          'login' => ['controller' => 'SiteController', 'method' => 'login'],
+          'login/submit' => ['controller' => 'AuthController', 'method' => 'loginUser'],
+          'contact/submit' => ['controller' => 'ContactController', 'method' => 'submitForm'],
       ];
   }
 
-
   public function route() {
-    $url = $_GET['url'] ?? 'home';
-    $url = explode('/', filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL));
+      $url = $_GET['url'] ?? 'home';
+      $url = filter_var(rtrim($url, '/'), FILTER_SANITIZE_URL);
+      var_dump($url);
 
-    $controllerName = $this->routes[$url[0]]['controller'];
-    $methodName = $this->routes[$url[0]]['method'] ?? 'index';
-    $controllerRoute = __DIR__.'/../controllers/' . $controllerName . '.php';
-
-    require_once $controllerRoute;
-    $controller = new $controllerName();
-    $controller->{$methodName}();
+      if (array_key_exists($url, $this->routes)) {
+          $controllerName = $this->routes[$url]['controller'];
+          $methodName = $this->routes[$url]['method'];
+          $controllerPath = __DIR__.'/../controllers/' . $controllerName . '.php';
+          var_dump($controllerName);
+          var_dump($methodName);
+          var_dump($controllerPath);
+          require_once $controllerPath;
+          $controller = new $controllerName();
+          $controller->{$methodName}();
+      } else {
+          echo "Page not found."; // Simple handling for undefined routes
+      }
   }
 }
+

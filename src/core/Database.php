@@ -1,19 +1,62 @@
 <?php
 
-define('DB_USER', $config['database']['user']);
-define('DB_PASS', $config['database']['password']);
-define('DB_HOST', $config['database']['host']);
-define('DB_NAME', $config['database']['name']);
-
 class Database {
-  private $pdo;
+  private $dbh;
+  private $stmt;
 
-  public function __construct() {
-      $this->pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
-      $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  public function __construct()
+  // Construct initalizes the connection to the database. //
+  {
+      $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
+      try {
+          $this->dbh = new PDO($dsn, DB_USER, DB_PASS, [
+              PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+              PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+          ]);
+      } catch (PDOException $e) {
+          // Handle exception
+          exit('Database connection error: ' . $e->getMessage());
+      }
   }
 
   public function query($sql) {
-      return $this->pdo->query($sql);
+      $this->stmt = $this->dbh->prepare($sql);
+  }
+
+  public function bind($param, $value, $type = null) {
+      if (is_null($type)) {
+          switch (true) {
+              case is_int($value):
+                  $type = PDO::PARAM_INT;
+                  break;
+              case is_bool($value):
+                  $type = PDO::PARAM_BOOL;
+                  break;
+              case is_null($value):
+                  $type = PDO::PARAM_NULL;
+                  break;
+              default:
+                  $type = PDO::PARAM_STR;
+          }
+      }
+      $this->stmt->bindValue($param, $value, $type);
+  }
+
+  public function execute() {
+      return $this->stmt->execute();
+  }
+
+  public function resultSet() {
+      $this->execute();
+      return $this->stmt->fetchAll();
+  }
+
+  public function single() {
+      $this->execute();
+      $result = $this->stmt->fetch();
+      if (!$result){
+        error_log("no data entry found for: " . $this->stmt->queryString);
+      }
+      return $result;
   }
 }

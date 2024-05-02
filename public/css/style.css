@@ -1,13 +1,21 @@
+
+/* Main CSS for pages */
 *{
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.wrapper {
+  /* border: 4px dashed purple; */
 }
 
 .container {
-  border:1px solid red;
+  /* border: 4px dotted brown; */
+  min-height: 500px;
 }
 
+/* Navigation bar styling*/
 .headerNavBar {
   background-color: #0092ca;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -21,12 +29,9 @@
   display: flex;
   justify-content: center;
 }
-
 .headerNavBar li {
   float: none;
 }
-
-
 .headerNavBar li a {
   display: block;
   color: white;
@@ -35,16 +40,15 @@
   text-decoration: none;
   transition: background-color 0.2s
 }
-
 .headerNavBar li a:hover{
   background-color: #393e46;
 }
 
 
-/* General Footer Styling */
+/* Footer styling + Nav Footer */
 footer {
-  background-color: #222831; /* First color: Dark charcoal */
-  color: #eeeeee; /* Fourth color: Light grey for text */
+  background-color: #222831;
+  color: #eeeeee;
   padding: 20px;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -57,18 +61,18 @@ footer {
 }
 
 .footerNavBar li {
-  display: inline; /* Display links in a line */
+  display: inline;
   margin-right: 20px;
 }
 
 .footerNavBar a {
-  color: #eeeeee; /* Text color */
+  color: #eeeeee;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footerNavBar a:hover {
-  color: #0092ca; /* Third color: Bright blue for hover effect */
+  color: #0092ca;
 }
 
 div.footer-credits {
@@ -77,10 +81,44 @@ div.footer-credits {
 }
 
 div.footer-credits a {
-  color: #00adb5; /* Use a distinctive color for links */
+  color: #00adb5;
   text-decoration: none;
 }
 
 div.footer-credits a:hover {
   text-decoration: underline;
+}
+
+
+/* Banner CSS */
+.banner {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.4em;
+  border: 2px solid red;
+}
+
+
+/* Home view CSS*/
+.bodyContainer{
+  justify-content: center;
+  border: 2px solid blue;
+  padding: 15px 40px;
+}
+.homeBody p {
+  font-size: 1.2em;
+}
+
+.aboutIntro {
+  border: 2px solid orange;
+  padding: 20px;
+}
+.aboutSkills {
+  border: 2px solid purple;
+  padding: 20px;
+}
+.aboutAwards {
+  border: 2px solid pink;
+  padding: 20px;
 }
