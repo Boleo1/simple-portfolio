@@ -13,7 +13,6 @@ class AuthModel
 
   public function verifyCredentials($username, $password)
   {
-      // Using named parameters
       $this->db->query("SELECT * FROM users WHERE username = :username AND password = :password");
       $this->db->bind(':username', $username);
       $this->db->bind(':password', $password);
@@ -25,7 +24,7 @@ class AuthModel
           return false;
       }
   
-      return true; // If a result is found, credentials are correct
+      return true;
   }
   
   

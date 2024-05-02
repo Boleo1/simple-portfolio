@@ -10,29 +10,30 @@ class ContactController {
     public function submitForm() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
+                'name' => $_POST['contactName'],
                 'email' => $_POST['contactEmail'],
-                'subject' => $_POST['contactSubject'],
                 'message' => $_POST['contactMessage']
             ];
 
             if ($this->contactModel->addContact($data)) {
-                header("Location: " . BASE_URL.'contact'); // Redirect to a thank-you page or back to the form with a success message
+                header("Location: " . BASE_URL.'contact');
             } else {
                 die('Something went wrong');
             }
         }
     }
 
-    public function viewContacts() {
-        $contacts = $this->contactModel->getContacts();
-        require 'views/contact/view.php'; // This page would list all contacts
-    }
 
-    public function deleteContact($id) {
-        if ($this->contactModel->deleteContact($id)) {
-            header("Location: " . BASE_URL.'contact'); // Redirect back to the contact list page
-        } else {
-            die('Failed to delete the contact');
-        }
-    }
+    public function deleteContact() {
+      if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+      $id = $_POST['id'];
+      if ($this->contactModel->deleteContact($id)) {
+          header('Location: ' . BASE_URL . 'admin');
+          exit;
+      } else {
+          echo "Error deleting contact.";
+      }
+  }
+  }
+  
 }

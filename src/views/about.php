@@ -1,8 +1,8 @@
 <?php
-echo "Logged in status: " . ($_SESSION['logged_in'] ? 'Yes' : 'No') . "<br>";
-echo "User: " . ($_SESSION['user'] ?? 'None');
 $pageTitle = "About";
-include_once 'templates/head-template.php'?>
+include_once 'templates/head-template.php'
+
+?>
 <main class="container">
   <div class="banner">
     <h2>About Page</h2>

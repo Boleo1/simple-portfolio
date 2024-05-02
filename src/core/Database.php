@@ -5,7 +5,6 @@ class Database {
   private $stmt;
 
   public function __construct()
-  // Construct initalizes the connection to the database. //
   {
       $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
       try {
@@ -14,7 +13,6 @@ class Database {
               PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
           ]);
       } catch (PDOException $e) {
-          // Handle exception
           exit('Database connection error: ' . $e->getMessage());
       }
   }

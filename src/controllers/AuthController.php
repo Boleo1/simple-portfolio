@@ -16,11 +16,10 @@ class AuthController {
         $password = $_POST['password'];
         if ($this->authModel->verifyCredentials($username, $password)) {
             $_SESSION['logged_in'] = true;
-            $_SESSION['user'] = $username;  // Store username in session for access control
-            header("Location: " . BASE_URL . 'admin'); // Redirect to the admin page
+            $_SESSION['user'] = $username;
+            header("Location: " . BASE_URL . 'admin');
             exit;
         } else {
-            // Redirect back to the login page with an error message
             header("Location: " . BASE_URL . 'login?=error');
             exit;
         }
@@ -30,9 +29,8 @@ class AuthController {
 
   // Handle Logout
   public function logout() {
-      session_unset(); // Remove all session variables
-      session_destroy(); // Destroy the session
-      header("Location: " . BASE_URL.'contact'); // Redirect to the login page
-      exit;
+      session_unset();
+      session_destroy();
+      header("Location: " . BASE_URL.'contact');
   }
 }

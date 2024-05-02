@@ -7,11 +7,9 @@
 }
 
 .wrapper {
-  /* border: 4px dashed purple; */
 }
 
 .container {
-  /* border: 4px dotted brown; */
   min-height: 500px;
 }
 
@@ -96,14 +94,12 @@ div.footer-credits a:hover {
   justify-content: center;
   padding: 20px;
   font-size: 1.4em;
-  border: 2px solid red;
 }
 
 
 /* Home view CSS*/
 .bodyContainer{
   justify-content: center;
-  border: 2px solid blue;
   padding: 15px 40px;
 }
 .homeBody p {
@@ -111,14 +107,11 @@ div.footer-credits a:hover {
 }
 
 .aboutIntro {
-  border: 2px solid orange;
   padding: 20px;
 }
 .aboutSkills {
-  border: 2px solid purple;
   padding: 20px;
 }
 .aboutAwards {
-  border: 2px solid pink;
   padding: 20px;
 }

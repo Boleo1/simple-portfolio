@@ -53,4 +53,9 @@ class SiteController
   {
     include __DIR__ . '/../views/login.php';
   }
+
+  public function create()
+  {
+    include __DIR__ . '/../views/create.php';
+  }
 }

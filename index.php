@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-define('BASE_URL', __DIR__);
+define('BASE_URL', '/portfolio/');
 require_once 'src/core/Router.php';
 
 $config = parse_ini_file('config.ini', true);
