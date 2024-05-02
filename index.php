@@ -1,8 +1,7 @@
 <?php
 session_start();
-$_SESSION['user'] = '';
-echo session_id();
-define('BASE_URL', '/simple-portfolio/');
+
+define('BASE_URL', __DIR__);
 require_once 'src/core/Router.php';
 
 $config = parse_ini_file('config.ini', true);
