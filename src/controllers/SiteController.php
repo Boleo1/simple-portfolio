@@ -20,7 +20,7 @@ class SiteController
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => [
             "X-RapidAPI-Host: weatherapi-com.p.rapidapi.com",
-            "X-RapidAPI-Key: d7100b2840mshe3ec912bd3c59cap1c53c0jsn4c3917ff553f"
+            "X-RapidAPI-Key: API KEY GOES HERE "
         ],
     ]);
 
@@ -81,7 +81,7 @@ class SiteController
   
   public function resume()
   {
-      $file = BASE_URL . 'public/img/Resume.pdf'; // Update the path if your PDF is stored elsewhere
+      $file = BASE_URL . 'public/img/Resume.pdf';
       if (file_exists($file)) {
           header('Content-Type: application/pdf');
           header('Content-Disposition: inline; filename="' . basename($file) . '"');
@@ -89,7 +89,6 @@ class SiteController
           readfile($file);
           exit;
       } else {
-          // If the file does not exist, you can redirect to a 404 page or show an error message
           echo "File not found.";
       }
   }
